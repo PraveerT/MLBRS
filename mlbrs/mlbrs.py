@@ -5,27 +5,27 @@ import pandas as pd
 import random
 import numpy as np
 class linearclassifier():
-    def linearreg(a,b,drop,independent):
-        od = pd.read_csv(a)
+    def linearreg(file_name, percentage_split, drop_columns_list=None, independent_variable,binary_conversion=None):
+        od = pd.read_csv(file_name)
 
 
-        for i in drop:
+        for i in drop_columns_list:
 
             od = od.drop([i],axis=1)
 
         sd = od.sample(frac=1)
 
         Y = []
-        iv = sd[independent]
+        iv = sd[independent_variable]
 
         for val in iv:
-            if (val == 'Iris-setosa'):
-                Y.append(0)
-            else:
+            if (val == binary_conversion):
                 Y.append(1)
+            else:
+                Y.append(0)
 
 
-        dwiv = sd.drop([independent],axis=1)
+        dwiv = sd.drop([independent_variable], axis=1)
         ldwiv = dwiv.values.tolist()
 
         X=ldwiv
@@ -35,7 +35,7 @@ class linearclassifier():
         x_test = []
         y_test = []
 
-        sep =int(b*(len(X)))
+        sep =int(percentage_split * (len(X)))
         rem= int(len(X)-sep)
         x_train = X[0:sep]
         x_test= X[sep:]
