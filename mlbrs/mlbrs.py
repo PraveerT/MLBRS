@@ -5,7 +5,7 @@ import pandas as pd
 import random
 import numpy as np
 class linearclassifier():
-    def linearreg(file_name, percentage_split, drop_columns_list=None, independent_variable,binary_conversion=None):
+    def linearreg(file_name, percentage_split,independent_variable, drop_columns_list=None,binary_conversion=None):
         od = pd.read_csv(file_name)
 
 
