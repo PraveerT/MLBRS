@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="mlbrs",                     # This is the name of the package
-    version="1.1.4",                        # The initial release version
+    version="1.1.6",                        # The initial release version
     author="Praveer Towakel",                     # Full name of the author
     description="MLBRS pakage library",
     long_description=long_description,      # Long description read from the the readme file

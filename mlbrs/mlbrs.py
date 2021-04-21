@@ -69,7 +69,7 @@ class linearclassifier():
         th={}
         for i in range(len(od.columns)):
             th["theta_"+ str(i)]=np.zeros((m, 1))
-        print (th.keys())
+
 
 
 
@@ -125,8 +125,6 @@ class linearclassifier():
             th["theta_"+ str(i)]=th["theta_"+str(i)].reshape(rem, 1)
 
 
-        print (th.keys())
-
         y_pred = 0
         y_pred += th["theta_0"]
         for i in range (len(od.columns)-1):
@@ -143,5 +141,5 @@ class linearclassifier():
                 new_y_pred.append(0)
 
 
-        print(accuracy_score(y_test, new_y_pred))
+        print("Accuracy score:",accuracy_score(y_test, new_y_pred))
 
