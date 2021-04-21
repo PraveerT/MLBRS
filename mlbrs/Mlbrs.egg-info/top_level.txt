@@ -1,1 +1,1 @@
-linearreg
+linearclassifier
