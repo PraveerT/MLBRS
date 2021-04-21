@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="mlbrs",                     # This is the name of the package
-    version="1.1.1",                        # The initial release version
+    version="1.1.3",                        # The initial release version
     author="Praveer Towakel",                     # Full name of the author
     description="MLBRS pakage library",
     long_description=long_description,      # Long description read from the the readme file
@@ -17,7 +17,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],                                      # Information to filter the project on PyPi website
     python_requires='>=3.6',                # Minimum version requirement of the package
-    py_modules=["classifier"],             # Name of the python package
+    py_modules=["mlbrs"],             # Name of the python package
     package_dir={'':'mlbrs'},     # Directory of the source code of the package
     install_requires=['pandas','numpy']                     # Install other dependencies if any
 )
