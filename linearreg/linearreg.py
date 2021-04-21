@@ -145,4 +145,3 @@ class Mlbrs():
 
         print(accuracy_score(y_test, new_y_pred))
 
-    linearreg("C:\\Users\\prav\\PycharmProjects\\SVM\\SVM\\iris.csv",0.5,{'Id'},'Species')
