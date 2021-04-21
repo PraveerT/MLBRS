@@ -1,1 +1,1 @@
-from classifier import Mlbrs
+from mlbrs import Mlbrs
