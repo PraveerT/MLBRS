@@ -4,7 +4,7 @@
 import pandas as pd
 import random
 import numpy as np
-class Mlbrs():
+class classifier():
     def linearreg(a,b,drop,independent):
         od = pd.read_csv(a)
 
