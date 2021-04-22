@@ -149,7 +149,7 @@ class linearclassifier():
         y_pred_sig=[]
         theta={}
 
-        for i in range (len(val)+1):
+        for i in range (len(val)):
             theta['theta_'+str(i)]=th['theta_'+str(i)][0]
 
 
@@ -183,10 +183,6 @@ class linearclassifier():
             print (display)
         else:
             print ("Not",display)
-
-
-    result=linearreg("C:\\Users\\prav\\PycharmProjects\\SVM\\SVM\\chd.csv",0.8,'Class',{},'1')
-
 
 
 
