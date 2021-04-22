@@ -146,8 +146,13 @@ class linearclassifier():
 
 
     def pred(val,th,display=None):
-        for i in range (len(val)):
-            th['theta_'+str(i)]=th['theta_'+str(i)][0]
+        y_pred_sig=[]
+        theta={}
+
+        for i in range (len(val)+1):
+            theta['theta_'+str(i)]=th['theta_'+str(i)][0]
+
+
 
 
         def sigmoid(x):
@@ -160,14 +165,14 @@ class linearclassifier():
             values["val_" + str(i+1)] = val[i]
         pred_test_array=np.array(pred_test)
         y_pred_sample = 0
-        y_pred_sample += th["theta_0"]
+        y_pred_sample += theta["theta_0"]
 
 
 
         for i in range(len(val) - 1):
-            y_pred_sample += th["theta_" + str(i + 1)] * values["val_" + str(i + 1)]
+            y_pred_sample += theta["theta_" + str(i + 1)] * values["val_" + str(i + 1)]
 
-        y_pred_sig = sigmoid(y_pred_sample)
+        y_pred_sig.append(sigmoid(y_pred_sample))
         new_y_pred_sample = []
         for val in y_pred_sig:
             if (val >= 0.5):
@@ -179,6 +184,8 @@ class linearclassifier():
         else:
             print ("Not",display)
 
+
+    result=linearreg("C:\\Users\\prav\\PycharmProjects\\SVM\\SVM\\chd.csv",0.8,'Class',{},'1')
 
 
 
