@@ -139,7 +139,46 @@ class linearclassifier():
                 new_y_pred.append(1)
             else:
                 new_y_pred.append(0)
+        return th
+
 
 
         print("Accuracy score:",accuracy_score(y_test, new_y_pred))
+    def pred(val,th,display=None):
+        for i in range (len(val)):
+            th['theta_'+str(i)]=th['theta_'+str(i)][0]
+
+
+        def sigmoid(x):
+            return (1 / (1 + np.exp(-x)))
+
+        values={}
+        pred_test=[]
+        for i in range(len(val)):
+
+            values["val_" + str(i+1)] = val[i]
+        pred_test_array=np.array(pred_test)
+        y_pred_sample = 0
+        y_pred_sample += th["theta_0"]
+
+
+
+        for i in range(len(val) - 1):
+            y_pred_sample += th["theta_" + str(i + 1)] * values["val_" + str(i + 1)]
+
+        y_pred_sig = sigmoid(y_pred_sample)
+        new_y_pred_sample = []
+        for val in y_pred_sig:
+            if (val >= 0.5):
+                new_y_pred_sample.append(1)
+            else:
+                new_y_pred_sample.append(0)
+        if new_y_pred_sample[0]==1:
+            print (display)
+        else:
+            print ("Not",display)
+
+
+
+
 
