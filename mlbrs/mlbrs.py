@@ -139,11 +139,12 @@ class linearclassifier():
                 new_y_pred.append(1)
             else:
                 new_y_pred.append(0)
+        print("Accuracy score:", accuracy_score(y_test, new_y_pred))
         return th
 
 
 
-        print("Accuracy score:",accuracy_score(y_test, new_y_pred))
+
     def pred(val,th,display=None):
         for i in range (len(val)):
             th['theta_'+str(i)]=th['theta_'+str(i)][0]
